@@ -1,7 +1,14 @@
+using Microsoft.EntityFrameworkCore;
+using RentCar.Models;
+using System.Data.Entity.ModelConfiguration.Conventions;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
+builder.Services.AddDbContext<RentCarDBcontext>(options =>
+    options.UseSqlServer(builder.Configuration.GetConnectionString("Database")));
+
 
 var app = builder.Build();
 
