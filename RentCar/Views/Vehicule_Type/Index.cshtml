@@ -18,18 +18,16 @@
   <tbody>
         @foreach ( var item in Model.vehicule_Types)
         {
-           
-            <tr>
+        <tr>
       <th scope="row">1</th>
       <td>@item.description</td>
-                @if (@item.status==true)
-                {
-                    <td>In Stock</td>
-                }
-                else
-                {
-                    <td>Out Of Stock</td>
-                }
+         @if (@item.status==true)
+           {
+             <td>In Stock</td>
+            } else
+            {
+             <td>Out Of Stock</td>
+             }
                 
       
     </tr>
