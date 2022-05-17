@@ -11,5 +11,8 @@
         public Employee [] employees { get; set; }
         public Inspection [] inspections { get; set; }
         public RentAndReturn[] rentAndReturns { get; set; }
+
+        public Guid id { get; set; }
+
     }
 }

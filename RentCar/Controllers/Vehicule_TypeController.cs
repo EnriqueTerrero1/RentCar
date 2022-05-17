@@ -1,83 +1,66 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using RentCar.Models;
+using RentCar.Models.Interface;
 
 namespace RentCar.Controllers
 {
     public class Vehicule_TypeController : Controller
+
+
     {
+        readonly IRentCar RentCar;
+        public Vehicule_TypeController(IRentCar RentCar)
+        {
+            this.RentCar = RentCar;
+        }
         // GET: Vehicule_TypeController
-        public ActionResult Index()
+        public async Task<IActionResult> Index()
         {
-            return View("");
+            var vehicule_Types = await RentCar.GetAllAsync();
+            var model = new RentCarModelView
+            {
+                vehicule_Types = vehicule_Types
+            };
+
+            return View(model);
         }
 
-        // GET: Vehicule_TypeController/Details/5
-        public ActionResult Details(int id)
-        {
-            return View();
-        }
 
-        // GET: Vehicule_TypeController/Create
-        public ActionResult Create()
+        public async Task<IActionResult> Create(Vehicule_Type vehicule_Type)
         {
+            if (!ModelState.IsValid)
+            {
+                // return RedirectToAction("Vehicule_Type_AddView");
+            }
+            var succesfull = await RentCar.CreateAsync(vehicule_Type);
+            if (!succesfull)
+            {
+                return BadRequest("operacion fallida");
+            }
             return View("Vehicule_Type_AddView");
         }
 
-        // POST: Vehicule_TypeController/Create
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public ActionResult Create(IFormCollection collection)
+        public IActionResult AddVehicule_TypeView()
         {
-            try
-            {
-                return RedirectToAction(nameof(Index));
-            }
-            catch
-            {
-                return View();
-            }
+            return View("Vehicule_Type_AddView");
         }
+        public async Task<IActionResult> Delete(Guid id)
+        {
+            if (!ModelState.IsValid)
+            {
+                return RedirectToAction("Vehicule_Type_AddView");
+            }
+            var succesfull = await RentCar.DeleteAsync(id);
+            if (!succesfull)
+            {
+                return BadRequest("operacion fallida");
+            }
+            return RedirectToAction("Index");
+        }
+        
 
-        // GET: Vehicule_TypeController/Edit/5
-        public ActionResult Edit(int id)
-        {
-            return View();
-        }
-
-        // POST: Vehicule_TypeController/Edit/5
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public ActionResult Edit(int id, IFormCollection collection)
-        {
-            try
-            {
-                return RedirectToAction(nameof(Index));
-            }
-            catch
-            {
-                return View();
-            }
-        }
-
-        // GET: Vehicule_TypeController/Delete/5
-        public ActionResult Delete(int id)
-        {
-            return View();
-        }
-
-        // POST: Vehicule_TypeController/Delete/5
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public ActionResult Delete(int id, IFormCollection collection)
-        {
-            try
-            {
-                return RedirectToAction(nameof(Index));
-            }
-            catch
-            {
-                return View();
-            }
-        }
     }
-}
+
+
+    }

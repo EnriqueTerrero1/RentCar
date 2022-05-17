@@ -1,9 +1,11 @@
 using Microsoft.EntityFrameworkCore;
 using RentCar.Models;
-using System.Data.Entity.ModelConfiguration.Conventions;
+using RentCar.Models.Interface;
+using RentCar.Models.Service;
+
 
 var builder = WebApplication.CreateBuilder(args);
-
+builder.Services.AddScoped<IRentCar, Vehicule_Type_Service>();
 // Add services to the container.
 builder.Services.AddControllersWithViews();
 builder.Services.AddDbContext<RentCarDBcontext>(options =>
