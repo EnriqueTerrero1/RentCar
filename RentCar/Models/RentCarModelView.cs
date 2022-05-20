@@ -13,6 +13,10 @@
         public RentAndReturn[] rentAndReturns { get; set; }
 
         public Guid id { get; set; }
+        public string description { get; set; }
+
+        public bool status { get; set; }
+        public int contador { get; set; }
 
     }
 }

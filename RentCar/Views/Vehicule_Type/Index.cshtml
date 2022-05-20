@@ -4,7 +4,7 @@
     ViewData["Title"] = "Index_Vehicule_Type";
 }
 
-<h1>Index_Vehicule_Type</h1>
+<h1>Vehicule Type</h1>
 
 <table class="table table-striped">
   <thead>
@@ -16,10 +16,13 @@
     </tr>
   </thead>
   <tbody>
+      
         @foreach ( var item in Model.vehicule_Types)
         {
         <tr>
-      <th scope="row">1</th>
+            
+      <th scope="row"></th>
+      
       <td>@item.description</td>
          @if (@item.status==true)
            {
@@ -37,22 +40,26 @@
   </tbody>
 </table>
 <form>
-<button  type="submit" class="btn btn-primary"  asp-action="AddVehicule_TypeView">Agregar Tipo De Vehiculo</button>
+<button  type="submit" class="btn btn-primary"  asp-action="AddVehicule_TypeView">Add vehicule type</button>
 <!-- Button trigger modal -->
 <button type="button" class="btn btn-primary"  data-bs-toggle="modal" data-bs-target="#staticBackdrop">
-  Eliminar Tipo de Vehiculo
+  Delete vehicule type
+</button>
+<!--Button trigger Update Modal-->
+<button type="button" class="btn btn-primary"  data-bs-toggle="modal" data-bs-target="#staticBackdrop1">
+  Update vehicule type
 </button>
 <!-- Modal -->
 <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="staticBackdropLabel">Modal title</h5>
+        <h5 class="modal-title" id="staticBackdropLabel">Delete Vehicule Type</h5>
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
           <form>
-   <select class="form-control" asp-for = "id" >
+   <select class="form-control" asp-for="id" >
 
    @foreach ( Vehicule_Type vehicule_Type in @Model.vehicule_Types)
        {
@@ -65,7 +72,7 @@
        
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-        <button type="submit" class="btn btn-primary"  asp-action="Delete">Eliminar</button>
+        <button type="submit" class="btn btn-primary"  asp-action="Delete">Delete</button>
         
       </div>
      
@@ -75,4 +82,60 @@
 
 
 </form>
+
+<form>
+
+<!-- Button trigger modal -->
+
+<!-- Modal -->
+<div class="modal fade" id="staticBackdrop1" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="staticBackdropLabel">Modal title</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+     <Label>Vehicule Type To Update</Label>
+          <form>
+   <select class="form-control" asp-for="id" >
+      
+   @foreach ( Vehicule_Type vehicule_Type in @Model.vehicule_Types)
+       {
+          
+       <option value="@vehicule_Type.id"> @vehicule_Type.description</option>
+       } 
+      
+   </select>
+   
+ 
+   </form>
+   <div class="form-group">
+    <label for="exampleFormControlInput1">Description: </label>
+    <input type="text" class="form-control" asp-for="description"  >
+  </div>
+  <div class="form-group">
+    <label asp-for = "status">Status</label>
+    <select class="form-control" asp-for="status" >
+    <option  value= "True" >In Stock</option>
+    <option value= "False">Out of Stock</option>
+    </select>
+
+   
+  
+      </div>
+       
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        <button type="submit" class="btn btn-primary"  asp-action="Update">Update</button>
+        
+      </div>
+     
+    </div>
+  </div>
+</div>
+
+
+</form>
+
 

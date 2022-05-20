@@ -5,7 +5,7 @@ using RentCar.Models.Service;
 
 
 var builder = WebApplication.CreateBuilder(args);
-builder.Services.AddScoped<IRentCar, Vehicule_Type_Service>();
+builder.Services.AddScoped<IRentCar<Vehicule_Type>, RentCarService<Vehicule_Type>>();
 // Add services to the container.
 builder.Services.AddControllersWithViews();
 builder.Services.AddDbContext<RentCarDBcontext>(options =>

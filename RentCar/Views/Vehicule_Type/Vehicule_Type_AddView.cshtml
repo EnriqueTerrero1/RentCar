@@ -1,4 +1,4 @@
-﻿@model RentCar.Models.Vehicule_Type
+﻿@model RentCar.Models.RentCarModelView
 
 @{
     ViewData["Title"] = "Vehicule Type";
@@ -14,8 +14,8 @@
     
     <label asp-for = "status">Status</label>
     <select class="form-control" asp-for="status">
-  <option asp-value= "True" >True</option>
-  <option  asp-value= "False">False</option>
+  <option value= "True" >In Stock</option>
+  <option value= "False">Out of Stock</option>
 
   
 </select>
@@ -26,5 +26,5 @@
   <div class="form-group">
    
   </div>
- <button  type="submit" asp-action="Create">Agregar</button>
+ <button  class="btn btn-primary"  type="submit" asp-action="Create">Add</button>
 </form>
