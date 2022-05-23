@@ -12,6 +12,7 @@ namespace RentCar.Controllers
     {
         private readonly RentCarDBcontext dbcontext;
         private readonly IRentCar<Vehicule_Type> _vehicule_Type;
+       
         public Vehicule_TypeController(IRentCar<Vehicule_Type> vehicule_Type)
         {
             _vehicule_Type = vehicule_Type;
@@ -22,11 +23,16 @@ namespace RentCar.Controllers
            var vehicule_Types= _vehicule_Type.GetAll();
             var types = new RentCarModelView
             {
-                vehicule_Types = vehicule_Types
+                vehicule_Types= vehicule_Types
+                
             };
-            return View(types);
+           
+
+
+            return View(  types);
         }
 
+       
         public async Task<IActionResult> Create(Vehicule_Type vehicule_Type)
         {
             if (!ModelState.IsValid)

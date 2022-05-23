@@ -6,6 +6,8 @@ using RentCar.Models.Service;
 
 var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddScoped<IRentCar<Vehicule_Type>, RentCarService<Vehicule_Type>>();
+builder.Services.AddScoped<IRentCar<VehiculeModel>, RentCarService<VehiculeModel>>();
+builder.Services.AddScoped<IRentCar<Brand>, RentCarService<Brand>>();
 // Add services to the container.
 builder.Services.AddControllersWithViews();
 builder.Services.AddDbContext<RentCarDBcontext>(options =>
@@ -32,5 +34,15 @@ app.UseAuthorization();
 app.MapControllerRoute(
     name: "default",
     pattern: "{controller=Vehicule_Type}/{action=Index}/{id?}");
+
+app.MapControllerRoute(
+    name: "default",
+    pattern: "{controller=Vehicule_Model}/{action=Create}/{string?}");
+
+app.MapControllerRoute(
+    name: "default",
+    pattern: "{controller=Vehicule_Model}/{action=Create}/{id?}");
+
+
 
 app.Run();

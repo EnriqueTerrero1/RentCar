@@ -1,0 +1,191 @@
+﻿
+@model RentCarModelView
+
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+<h1>Vehicule Model</h1>
+
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Description</th>
+      <th scope="col">Status</th>
+      
+    </tr>
+  </thead>
+  <tbody>
+      
+        @foreach ( var item in Model.vehiculeModels)
+        {
+        <tr>
+            
+      <th scope="row"></th>
+      
+      <td>@item.description</td>
+         @if (@item.status==true)
+           {
+             <td>In Stock</td>
+            } else
+            {
+             <td>Out Of Stock</td>
+             }
+                
+      
+    </tr>
+    
+        }
+        
+  </tbody>
+</table>
+<form>
+<button  type="button" class="btn btn-primary"  data-bs-toggle="modal" data-bs-target="#staticBackdrop2">Add vehicule Model</button>
+<!-- Button trigger modal -->
+<button type="button" class="btn btn-primary"  data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+  Delete vehicule Model
+</button>
+<!--Button trigger Update Modal-->
+<button type="button" class="btn btn-primary"  data-bs-toggle="modal" data-bs-target="#staticBackdrop1">
+  Update vehicule Model
+</button>
+<!-- Modal -->
+<div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="staticBackdropLabel">Delete Vehicule Type</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+          <form>
+   <select class="form-control" asp-for="id" >
+
+   @foreach ( VehiculeModel vehiculeModel in @Model.vehiculeModels)
+       {
+          
+        <option value="@vehiculeModel.id" > @vehiculeModel.description</option>
+       }         
+   </select>
+   </form>
+      </div>
+       
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        <button type="submit" class="btn btn-primary"  asp-action="Delete">Delete</button>
+        
+      </div>
+     
+    </div>
+  </div>
+</div>
+
+
+</form>
+
+<form>
+
+
+
+<!-- Modal -->
+<div class="modal fade" id="staticBackdrop1" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="staticBackdropLabel">Modal title</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+     <Label>Vehicule Type To Update</Label>
+          <form>
+   <select class="form-control" asp-for="id" >
+      
+   @foreach ( VehiculeModel vehiculeModel in @Model.vehiculeModels)
+       {
+          
+       <option value="@vehiculeModel.id"> @vehiculeModel.description</option>
+       } 
+      
+   </select>
+   
+ 
+   </form>
+   <div class="form-group">
+    <label for="exampleFormControlInput1">Description: </label>
+    <input type="text" class="form-control" asp-for="description"  >
+  </div>
+  <div class="form-group">
+    <label asp-for = "status">Status</label>
+    <select class="form-control" asp-for="status" >
+    <option  value= "True" >In Stock</option>
+    <option value= "False">Out of Stock</option>
+    </select>
+
+   
+  
+      </div>
+       
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        <button type="submit" class="btn btn-primary"  asp-action="Update">Update</button>
+        
+      </div>
+     
+    </div>
+  </div>
+</div>
+
+</div>
+</form>
+
+<form>
+
+
+
+<!-- Modal -->
+<div class="modal fade" id="staticBackdrop2" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="staticBackdropLabel">Add Vehicule Model</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+     <Label>Add Vehicule Model</Label>
+        <form >
+  <div class="form-group">
+    <label for="exampleFormControlInput1">Description: </label>
+    <input type="text" class="form-control" asp-for="description">
+  </div>
+  <div class="form-group">
+    <label hidden="hidden" asp-for= "id"></label>
+    <label asp-for = "status">Status</label>
+    <select class="form-control" asp-for="status">
+  <option value= "True" >In Stock</option>
+  <option value= "False">Out of Stock</option>
+</select>
+      </div>
+      <label asp-for="brand">Brand</label>
+      <select class="form-control" asp-for="brand">
+
+            @foreach ( var brand in @Model.brands)
+                        {
+                            <option>@brand.description</option>
+                        }
+                        </select>
+                    </form>
+       
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        <button type="submit" class="btn btn-primary"  asp-action="Create" >Add</button>
+        
+      </div>
+     
+    </div>
+  </div>
+</div>
+</div>
+
+
+</form>
+
+
+

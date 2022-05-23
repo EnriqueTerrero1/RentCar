@@ -17,6 +17,8 @@
 
         public bool status { get; set; }
         public int contador { get; set; }
+        public string brand { get; set; }
+
 
     }
 }
