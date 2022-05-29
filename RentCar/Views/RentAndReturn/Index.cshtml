@@ -1,0 +1,78 @@
+﻿
+@model RentCar.Models.RentCarModelView
+@{
+    int i=1;
+    int Contador() => i++;
+
+    string InOrOutStock(bool status)
+    {
+        if (status == true)
+        {
+            return "In Stock";
+        }
+        else
+        {
+            return "Out of Stock";
+        }
+    }
+}
+
+<h1>Rent Car</h1>
+
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Employee</th>
+      <th scope="col">Vehicule</th>
+      <th scope="col">Client</th>
+      <th scope="col">Rent Date</th>
+      <th scope="col">Return Date</th>
+      <th scope="col">CostPerDay</th>
+      <th scope="col">Rent Days</th>
+      <th scope="col">Comment</th>
+      <th scope="col">Status</th>
+      
+    </tr>
+  </thead>
+  <tbody>
+      
+        @foreach ( var item in Model.rentAndReturns)
+        {
+        <tr>
+            
+      <th scope="row">@Contador()</th>
+      <td>@item.Employee</td>
+      <td>@item.Vehicule</td>
+      <td>@item.client</td>
+      <td>@item.rentDate</td>
+      <td>@item.returnDate</td>
+      <td>@item.costPerDay</td>
+      <td>@item.rentDays</td>
+      <td>@item.comment</td>
+      <td>@InOrOutStock(@item.status)</td>
+                
+      
+    </tr>
+    
+        }
+        
+  </tbody>
+</table>
+
+<button  type="button" class="btn btn-primary"  data-bs-toggle="modal" data-bs-target="#AddstaticBackdrop">Add vehicule</button>
+<!-- Button trigger modal -->
+<button type="button" class="btn btn-primary"  data-bs-toggle="modal" data-bs-target="#DeletestaticBackdrop">
+  Delete vehicule
+</button>
+<!--Button trigger Update Modal-->
+<button type="button" class="btn btn-primary"  data-bs-toggle="modal" data-bs-target="#UpdatestaticBackdrop1">
+  Update vehicule 
+</button>
+<!--<partial name ="_DeleteView"/>
+
+<partial name="_UpdateView" />
+
+<partial name ="_AddView"/>-->
+
+

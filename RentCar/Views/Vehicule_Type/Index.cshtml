@@ -1,7 +1,20 @@
 ﻿@model RentCar.Models.RentCarModelView
 
 @{
-    ViewData["Title"] = "Index_Vehicule_Type";
+    int i=1;
+    int Contador() => i++;
+
+    string InOrOutStock(bool status)
+    {
+        if (status == true)
+        {
+            return "In Stock";
+        }
+        else
+        {
+            return "Out of Stock";
+        }
+    }
 }
 
 <h1>Vehicule Type</h1>
@@ -11,6 +24,7 @@
     <tr>
       <th scope="col">#</th>
       <th scope="col">Description</th>
+      
       <th scope="col">Status</th>
       
     </tr>
@@ -21,16 +35,11 @@
         {
         <tr>
             
-      <th scope="row"></th>
+      <th scope="row">@Contador()</th>
       
       <td>@item.description</td>
-         @if (@item.status==true)
-           {
-             <td>In Stock</td>
-            } else
-            {
-             <td>Out Of Stock</td>
-             }
+   
+         <td>@InOrOutStock(item.status)</td>
                 
       
     </tr>
@@ -42,15 +51,15 @@
 <form>
 <button  type="submit" class="btn btn-primary"  asp-action="AddVehicule_TypeView">Add vehicule type</button>
 <!-- Button trigger modal -->
-<button type="button" class="btn btn-primary"  data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+<button type="button" class="btn btn-primary"  data-bs-toggle="modal" data-bs-target="#DeletestaticBackdrop">
   Delete vehicule type
 </button>
 <!--Button trigger Update Modal-->
-<button type="button" class="btn btn-primary"  data-bs-toggle="modal" data-bs-target="#staticBackdrop1">
+<button type="button" class="btn btn-primary"  data-bs-toggle="modal" data-bs-target="#UpdatestaticBackdrop1">
   Update vehicule type
 </button>
 <!-- Modal -->
-<div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+<div class="modal fade" id="DeletestaticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="DeletestaticBackdropLabel" aria-hidden="true">
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
@@ -88,11 +97,11 @@
 <!-- Button trigger modal -->
 
 <!-- Modal -->
-<div class="modal fade" id="staticBackdrop1" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+<div class="modal fade" id="UpdatestaticBackdrop1" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="staticBackdropLabel">Modal title</h5>
+        <h5 class="modal-title" id="staticBackdropLabel">Update Vehicule type</h5>
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">

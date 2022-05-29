@@ -68,8 +68,10 @@ namespace RentCar.Controllers
             return View("Vehicule_Type_AddView");
         }
 
-        public async Task<IActionResult> UpdateAsync(VehiculeModel vehiculeModel)
+        public async Task<IActionResult> UpdateAsync(VehiculeModel vehiculeModel, string brand)
         {
+            vehiculeModel.brand = _brand.GetAll().Where(x => x.description == brand).FirstOrDefault();
+
             if (!ModelState.IsValid)
             {
                 //return RedirectToAction("Index");

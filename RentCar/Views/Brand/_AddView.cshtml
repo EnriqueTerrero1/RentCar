@@ -1,0 +1,40 @@
+﻿@model RentCarModelView
+
+@{
+
+}
+<!-- Modal -->
+<div class="modal fade" id="AddstaticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="staticBackdropLabel">Add Brand</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+     <Label>Add Fuel Type</Label>
+        <form >
+  <div class="form-group">
+    <label for="exampleFormControlInput1">Description: </label>
+    <input type="text" class="form-control" asp-for="description">
+  </div>
+  <div class="form-group">
+    <label hidden="hidden" asp-for= "id"></label>
+    <label asp-for = "status">Status</label>
+    <select class="form-control" asp-for="status">
+  <option value= "True" >In Stock</option>
+  <option value= "False">Out of Stock</option>
+</select>
+      </div>
+      </form>
+       
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        <button type="submit" class="btn btn-primary"  asp-action="Create" >Add</button>
+        
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+     

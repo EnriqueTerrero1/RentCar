@@ -1,0 +1,53 @@
+﻿@model RentCarModelView
+
+@{
+}
+<!-- Modal -->
+<div class="modal fade" id="UpdatestaticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="staticBackdropLabel">Modal title</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+     <Label>Vehicule Type To Update</Label>
+          <form>
+   <select class="form-control" asp-for="id" >
+      
+   @foreach ( Fuel_Type fuel in @Model.fuel_Types)
+       {
+          
+       <option value="@fuel.Id"> @fuel.description</option>
+       } 
+      
+   </select>
+   
+ 
+   
+   <div class="form-group">
+    <label for="exampleFormControlInput1">Description: </label>
+    <input type="text" class="form-control" asp-for="description"  >
+  </div>
+  <div class="form-group">
+    <label asp-for = "status">Status</label>
+    <select class="form-control" asp-for="status" >
+    <option  value= "True" >In Stock</option>
+    <option value= "False">Out of Stock</option>
+    </select>
+
+   
+  
+      </div>
+       
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        <button type="submit" class="btn btn-primary"  asp-action="Update">Update</button>
+        
+      </div>
+     </form>
+    </div>
+  </div>
+</div>
+
+</div>

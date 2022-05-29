@@ -15,12 +15,68 @@ build_property.GenerateRazorMetadataSourceChecksumAttributes =
 build_property.MSBuildProjectDirectory = C:\Users\Enrique Terrero\Documents\RentCar\RentCar
 build_property._RazorSourceGeneratorDebug = 
 
+[C:/Users/Enrique Terrero/Documents/RentCar/RentCar/Views/Brand/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQnJhbmRcSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Enrique Terrero/Documents/RentCar/RentCar/Views/Brand/_AddView.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQnJhbmRcX0FkZFZpZXcuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Enrique Terrero/Documents/RentCar/RentCar/Views/Brand/_DeleteView.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQnJhbmRcX0RlbGV0ZVZpZXcuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Enrique Terrero/Documents/RentCar/RentCar/Views/Brand/_UpdateView.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQnJhbmRcX1VwZGF0ZVZpZXcuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Enrique Terrero/Documents/RentCar/RentCar/Views/Client/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2xpZW50XEluZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Enrique Terrero/Documents/RentCar/RentCar/Views/Client/_AddView.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2xpZW50XF9BZGRWaWV3LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Enrique Terrero/Documents/RentCar/RentCar/Views/Client/_DeleteView.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2xpZW50XF9EZWxldGVWaWV3LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Enrique Terrero/Documents/RentCar/RentCar/Views/Client/_UpdateView.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2xpZW50XF9VcGRhdGVWaWV3LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Enrique Terrero/Documents/RentCar/RentCar/Views/Fuel_Type/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRnVlbF9UeXBlXEluZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Enrique Terrero/Documents/RentCar/RentCar/Views/Fuel_Type/_AddView.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRnVlbF9UeXBlXF9BZGRWaWV3LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Enrique Terrero/Documents/RentCar/RentCar/Views/Fuel_Type/_DeleteView.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRnVlbF9UeXBlXF9EZWxldGVWaWV3LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Enrique Terrero/Documents/RentCar/RentCar/Views/Fuel_Type/_UpdateView.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRnVlbF9UeXBlXF9VcGRhdGVWaWV3LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/Enrique Terrero/Documents/RentCar/RentCar/Views/Home/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/Enrique Terrero/Documents/RentCar/RentCar/Views/Home/Privacy.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQcml2YWN5LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Enrique Terrero/Documents/RentCar/RentCar/Views/RentAndReturn/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUmVudEFuZFJldHVyblxJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Enrique Terrero/Documents/RentCar/RentCar/Views/RentAndReturn/_AddView.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUmVudEFuZFJldHVyblxfQWRkVmlldy5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/Enrique Terrero/Documents/RentCar/RentCar/Views/Shared/Error.cshtml]
@@ -31,8 +87,36 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
+[C:/Users/Enrique Terrero/Documents/RentCar/RentCar/Views/Vehicule/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVmVoaWN1bGVcSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Enrique Terrero/Documents/RentCar/RentCar/Views/Vehicule/_AddView.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVmVoaWN1bGVcX0FkZFZpZXcuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Enrique Terrero/Documents/RentCar/RentCar/Views/Vehicule/_DeleteView.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVmVoaWN1bGVcX0RlbGV0ZVZpZXcuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Enrique Terrero/Documents/RentCar/RentCar/Views/Vehicule/_UpdateView.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVmVoaWN1bGVcX1VwZGF0ZVZpZXcuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/Enrique Terrero/Documents/RentCar/RentCar/Views/Vehicule_Model/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVmVoaWN1bGVfTW9kZWxcSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Enrique Terrero/Documents/RentCar/RentCar/Views/Vehicule_Model/_AddView.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVmVoaWN1bGVfTW9kZWxcX0FkZFZpZXcuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Enrique Terrero/Documents/RentCar/RentCar/Views/Vehicule_Model/_DeleteView.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVmVoaWN1bGVfTW9kZWxcX0RlbGV0ZVZpZXcuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Enrique Terrero/Documents/RentCar/RentCar/Views/Vehicule_Model/_UpdateView.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVmVoaWN1bGVfTW9kZWxcX1VwZGF0ZVZpZXcuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/Enrique Terrero/Documents/RentCar/RentCar/Views/Vehicule_Type/Index.cshtml]

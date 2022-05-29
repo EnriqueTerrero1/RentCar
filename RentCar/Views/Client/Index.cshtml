@@ -1,7 +1,7 @@
-﻿
-@model RentCarModelView
+﻿@model RentCar.Models.RentCarModelView
+
 @{
-    int i=1;
+     int i=1;
     int Contador() => i++;
 
     string InOrOutStock(bool status)
@@ -16,29 +16,37 @@
         }
     }
 }
-<h1>Vehicule Model</h1>
+
+<h1>Client</h1>
 
 <table class="table table-striped">
   <thead>
     <tr>
       <th scope="col">#</th>
-      <th scope="col">Description</th>
-      <th scope="col">Brand</th>
+      <th scope="col">Name</th>
+      <th scope="col">Identification Card</th>
+      <th scope="col">tarjetaCrNumber</th>
+      <th scope="col">Credit Limit</th>
+      <th scope="col">Person Kind</th>
       <th scope="col">Status</th>
       
     </tr>
   </thead>
   <tbody>
       
-        @foreach ( var item in Model.vehiculeModels)
+        @foreach ( var item in Model.clients)
         {
         <tr>
             
       <th scope="row">@Contador()</th>
       
-      <td>@item.description</td>
-      <td>@item.brand.description</td>
-         <td>@InOrOutStock(@item.status)</td>
+      <td>@item.name</td>
+       <td>@item.identificationCard</td>
+        <td>@item.tarjetaCrNumber</td>
+        <td>@item.creditLimit</td>
+        <td>@item.PersonKind</td>
+     
+        <td>@InOrOutStock(@item.status)</td>
                 
       
     </tr>
@@ -47,21 +55,24 @@
         
   </tbody>
 </table>
-
-<button  type="button" class="btn btn-primary"  data-bs-toggle="modal" data-bs-target="#AddstaticBackdrop">Add vehicule Model</button>
+<button  type="button" class="btn btn-primary"  data-bs-toggle="modal" data-bs-target="#AddstaticBackdrop">Add client</button>
 <!-- Button trigger modal -->
 <button type="button" class="btn btn-primary"  data-bs-toggle="modal" data-bs-target="#DeletestaticBackdrop">
-  Delete vehicule Model
+  Delete Fuel Type
 </button>
 <!--Button trigger Update Modal-->
 <button type="button" class="btn btn-primary"  data-bs-toggle="modal" data-bs-target="#UpdatestaticBackdrop">
-  Update vehicule Model
+  Update Fuel Type
 </button>
+
 
 <partial name="_AddView"/>
 <partial name="_DeleteView"/>
 <partial name ="_UpdateView"/>
 
+
+
+     
 
 
 

@@ -4,7 +4,7 @@
     {
         public Guid id { get; set; }
         public string name { get; set; }
-        public int identificationCard { get; set; }
+        public string identificationCard { get; set; }
 
         public int tarjetaCrNumber { get; set; }
 

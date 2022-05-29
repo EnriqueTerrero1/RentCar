@@ -16,31 +16,30 @@
         }
     }
 }
-<h1>Vehicule Model</h1>
+
+    
+<h1>Brand</h1>
 
 <table class="table table-striped">
   <thead>
     <tr>
       <th scope="col">#</th>
       <th scope="col">Description</th>
-      <th scope="col">Brand</th>
       <th scope="col">Status</th>
       
     </tr>
   </thead>
   <tbody>
       
-        @foreach ( var item in Model.vehiculeModels)
+        @foreach ( var item in Model.brands)
         {
         <tr>
             
       <th scope="row">@Contador()</th>
       
       <td>@item.description</td>
-      <td>@item.brand.description</td>
          <td>@InOrOutStock(@item.status)</td>
                 
-      
     </tr>
     
         }
@@ -48,19 +47,20 @@
   </tbody>
 </table>
 
-<button  type="button" class="btn btn-primary"  data-bs-toggle="modal" data-bs-target="#AddstaticBackdrop">Add vehicule Model</button>
+<button  type="button" class="btn btn-primary"  data-bs-toggle="modal" data-bs-target="#AddstaticBackdrop">Add Brand</button>
 <!-- Button trigger modal -->
 <button type="button" class="btn btn-primary"  data-bs-toggle="modal" data-bs-target="#DeletestaticBackdrop">
-  Delete vehicule Model
+  Delete Brand
 </button>
 <!--Button trigger Update Modal-->
 <button type="button" class="btn btn-primary"  data-bs-toggle="modal" data-bs-target="#UpdatestaticBackdrop">
-  Update vehicule Model
+  Update Brand
 </button>
 
-<partial name="_AddView"/>
-<partial name="_DeleteView"/>
+<partial name ="_AddView"/>
 <partial name ="_UpdateView"/>
+<partial name ="_DeleteView"/>
+
 
 
 
