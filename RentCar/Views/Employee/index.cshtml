@@ -1,4 +1,5 @@
-﻿@model RentCar.Models.RentCarModelView
+﻿
+@model RentCar.Models.RentCarModelView
 
 @{
      int i=1;
@@ -17,7 +18,7 @@
     }
 }
 
-<h1>Client</h1>
+<h1>Employee</h1>
 
 <table class="table table-striped">
   <thead>
@@ -25,26 +26,26 @@
       <th scope="col">#</th>
       <th scope="col">Name</th>
       <th scope="col">Identification Card</th>
-      <th scope="col">tarjetaCrNumber</th>
-      <th scope="col">Credit Limit</th>
-      <th scope="col">Person Kind</th>
+      <th scope="col">Working Time</th>
+      <th scope="col">Comission Percentage</th>
+      <th scope="col">Date of admission</th>
       <th scope="col">Status</th>
       
     </tr>
   </thead>
   <tbody>
       
-        @foreach ( var item in Model.clients)
+        @foreach ( var item in Model.employees)
         {
         <tr>
             
       <th scope="row">@Contador()</th>
       
-      <td>@item.name</td>
+      <td>@item.Name</td>
        <td>@item.identificationCard</td>
-        <td>@item.tarjetaCrNumber</td>
-        <td>@item.creditLimit</td>
-        <td>@item.PersonKind</td>
+        <td>@item.workingTime</td>
+        <td>@item.CommissionPercentage</td>
+        <td>@item.datedateOfAdmission</td>
      
         <td>@InOrOutStock(@item.status)</td>
                 
@@ -55,27 +56,19 @@
         
   </tbody>
 </table>
-<button  type="button" class="btn btn-primary"  data-bs-toggle="modal" data-bs-target="#AddstaticBackdrop">Add client</button>
+<button  type="button" class="btn btn-primary"  data-bs-toggle="modal" data-bs-target="#AddstaticBackdrop">Add Employee</button>
 <!-- Button trigger modal -->
 <button type="button" class="btn btn-primary"  data-bs-toggle="modal" data-bs-target="#DeletestaticBackdrop">
-  Delete Client
+  Delete Employee
 </button>
 <!--Button trigger Update Modal-->
 <button type="button" class="btn btn-primary"  data-bs-toggle="modal" data-bs-target="#UpdatestaticBackdrop">
-  Update Client
+  Update Employee
 </button>
 
 
 <partial name="_AddView"/>
 <partial name="_DeleteView"/>
 <partial name ="_UpdateView"/>
-
-
-
-     
-
-
-
-
 
 

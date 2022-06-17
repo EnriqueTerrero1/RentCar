@@ -1,11 +1,13 @@
-﻿@model RentCarModelView
-    
+﻿@model RentCar.Models.RentCarModelView
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 
 @{
+   
+    
 }
 
 <!-- Modal -->
-<div class="modal fade" id="UpdatestaticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+<div class="modal fade" id="SelectVehiculeestaticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
@@ -13,13 +15,12 @@
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
-     <Label>Vehicule Type To Update</Label>
-          <form method="post" action="/vehicule">
-   <select class="form-control" asp-for="id" >
+     <Label>Select Vehicule</Label>
+          <form>
+   <select class="form-control"  asp-for="id" asp-for="@Model.Vehicule" onselect="">
       
-   @foreach ( Vehicule vehicule in @Model.vehicules)
+   @foreach ( Vehicule vehicule in Model.vehicules)
        {
-          
        <option value="@vehicule.id"> @vehicule.description</option>
        } 
       
@@ -39,34 +40,16 @@
     <input type="text" class="form-control" asp-for="plateNumber" value="@Model.plateNumber">
      
     <label asp-for="vehicule_Type">Vehicule type</label>
-    <select class="form-control" asp-for="vehicule_Type">
-    @foreach (var vehicule_Type in @Model.vehicule_Types)
-          {
-              <option>@vehicule_Type.description</option>
-           }
-      </select>
+    <input type="text" class="form-control" asp-for="vehicule_Type" value="@Model.vehicule_Type"> 
       <label asp-for="brand">Brand</label>
-      <select class="form-control" asp-for="brand">
-       @foreach ( var brand in @Model.brands)
-             {
-               <option>@brand.description</option>
-              }
-      </select>
+   <input type="text" class="form-control" asp-for="brand" value="@Model.brand" placeholder="@Model.brand"> 
        <label asp-for="model">Model</label>
-      <select class="form-control" asp-for="model">
-       @foreach ( var vehiculeModel in @Model.vehiculeModels)
-             {
-               <option>@vehiculeModel.description</option>
-              }
-      </select>
+         <input type="text" class="form-control" asp-for="model" value="@Model.model"> 
+
        <label asp-for="fuel_type">Fuel type</label>
-      <select class="form-control" id= "fuel_type" name ="fuel_type">
-       @foreach ( var fuel_type in @Model.fuel_Types)
-             {
-              <option>@fuel_type.description</option>
-              }
-      </select>
-      
+       <input type="text" class="form-control" asp-for="fuel_type" value="@Model.fuel_type"> 
+
+   
       
   </div>
   <div class="form-group">
@@ -78,9 +61,16 @@
 </select>
       </div>
         
+     
+
+                  
+   
+  
+      
+       
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-        <button type="submit" class="btn btn-primary"   asp-action="Update">Update</button>
+        <button type="submit" class="btn btn-primary"   asp-action="SelectVehicule">Update</button>
         
       </div>
         </form>

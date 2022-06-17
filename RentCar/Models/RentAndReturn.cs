@@ -1,4 +1,6 @@
-﻿namespace RentCar.Models
+﻿using System.ComponentModel.DataAnnotations;
+
+namespace RentCar.Models
 {
     public class RentAndReturn
     {
@@ -7,15 +9,19 @@
         public Vehicule Vehicule { get; set; }
         public Client client { get; set; }
 
+        [DataType(DataType.Date)]
+        [DisplayFormat(DataFormatString = "{0:yyyy-MM-dd}", ApplyFormatInEditMode = true)]
         public DateTime rentDate { get; set; }
 
+        [DataType(DataType.Date)]
+        [DisplayFormat(DataFormatString = "{0:yyyy-MM-dd}", ApplyFormatInEditMode = true)]
         public DateTime returnDate { get; set; }
         
         public double costPerDay { get; set; }
     
         public int rentDays { get; set; }
 
-        public string comment { get; set; }
+        public string? comment { get; set; }
 
         public bool status { get; set; }
 

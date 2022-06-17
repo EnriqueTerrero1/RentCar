@@ -15,6 +15,7 @@
             return "Out of Stock";
         }
     }
+    
 }
 
 <h1>Rent Car</h1>
@@ -42,11 +43,11 @@
         <tr>
             
       <th scope="row">@Contador()</th>
-      <td>@item.Employee</td>
-      <td>@item.Vehicule</td>
-      <td>@item.client</td>
-      <td>@item.rentDate</td>
-      <td>@item.returnDate</td>
+      <td>@item.Employee.Name</td>
+      <td>@item.Vehicule.description</td>
+      <td>@item.client.name</td>
+      <td >@item.rentDate.ToString("dd/MM/yyyy")</td>
+      <td>@item.returnDate.ToString("dd/MM/yyyy")</td>
       <td>@item.costPerDay</td>
       <td>@item.rentDays</td>
       <td>@item.comment</td>
@@ -60,19 +61,21 @@
   </tbody>
 </table>
 
-<button  type="button" class="btn btn-primary"  data-bs-toggle="modal" data-bs-target="#AddstaticBackdrop">Add vehicule</button>
+<button  type="button" class="btn btn-primary"  data-bs-toggle="modal" data-bs-target="#AddstaticBackdrop">Add Rent</button>
 <!-- Button trigger modal -->
 <button type="button" class="btn btn-primary"  data-bs-toggle="modal" data-bs-target="#DeletestaticBackdrop">
-  Delete vehicule
+  Delete Rent
 </button>
 <!--Button trigger Update Modal-->
-<button type="button" class="btn btn-primary"  data-bs-toggle="modal" data-bs-target="#UpdatestaticBackdrop1">
-  Update vehicule 
+<button type="button" class="btn btn-primary"  data-bs-toggle="modal" data-bs-target="#UpdatestaticBackdrop">
+  Update Rent 
 </button>
-<!--<partial name ="_DeleteView"/>
+<partial name ="_DeleteView"/>
 
 <partial name="_UpdateView" />
 
-<partial name ="_AddView"/>-->
+<partial name ="_AddView"/>
+
+
 
 

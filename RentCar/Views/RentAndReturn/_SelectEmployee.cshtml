@@ -1,50 +1,39 @@
-﻿@model RentCarModelView
-    
+﻿@model RentCar.Models.RentCarModelView
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 
 @{
 }
 
-<!-- Modal -->
-<div class="modal fade" id="UpdatestaticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+<div class="modal fade" id="SelectEmployeestaticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="staticBackdropLabel">Modal title</h5>
+        <h5 class="modal-title" id="staticBackdropLabel">Add Vehicule Model</h5>
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-      </div>
-      <div class="modal-body">
-     <Label>Vehicule Type To Update</Label>
-          <form method="post" action="/vehicule">
-   <select class="form-control" asp-for="id" >
-      
-   @foreach ( Vehicule vehicule in @Model.vehicules)
-       {
           
-       <option value="@vehicule.id"> @vehicule.description</option>
-       } 
+      </div>
+      <form>
+      <div class="modal-body">
+     <Label>Add Rent and return</Label>
       
-   </select>
-
   <div class="form-group">
     <label for="exampleFormControlInput1">Description: </label>
-    <input type="text" class="form-control" asp-for="description" value="@Model.description">
-     
-     <label for="exampleFormControlInput1"  >Chasis number </label>
+    <input type="text" class="form-control" asp-for="description">
+     <label for="exampleFormControlInput1">Chasis number </label>
     <input type="text" class="form-control" asp-for="chasisNumber">
-      
-    <label for="exampleFormControlInput1" >Motor number </label>
+    <label for="exampleFormControlInput1">Motor number </label>
     <input type="text" class="form-control" asp-for="motorNumber">
-    
-    <label for="exampleFormControlInput1"  >Plate number </label>
-    <input type="text" class="form-control" asp-for="plateNumber" value="@Model.plateNumber">
-     
-    <label asp-for="vehicule_Type">Vehicule type</label>
-    <select class="form-control" asp-for="vehicule_Type">
-    @foreach (var vehicule_Type in @Model.vehicule_Types)
+    <label for="exampleFormControlInput1">Plate number </label>
+    <input type="text" class="form-control" asp-for="plateNumber">
+
+    <label asp-for="Employee">Employee</label>
+    <input type="button" class="form-control" asp-for="Employee" data-bs-target="#AddEmployeestaticBackdrop" />
+    <!-- <select class="form-control" asp-for="employee">
+   foreach (var employee in Model.employees)
           {
-              <option>@vehicule_Type.description</option>
+              <option>employee.Name</option>
            }
-      </select>
+      </select>-->
       <label asp-for="brand">Brand</label>
       <select class="form-control" asp-for="brand">
        @foreach ( var brand in @Model.brands)
@@ -60,14 +49,12 @@
               }
       </select>
        <label asp-for="fuel_type">Fuel type</label>
-      <select class="form-control" id= "fuel_type" name ="fuel_type">
+      <select class="form-control" asp-for="fuel_type">
        @foreach ( var fuel_type in @Model.fuel_Types)
              {
               <option>@fuel_type.description</option>
               }
       </select>
-      
-      
   </div>
   <div class="form-group">
     <label hidden="hidden" asp-for= "id"></label>
@@ -77,18 +64,19 @@
   <option value= "False">Out of Stock</option>
 </select>
       </div>
-        
+      
+                    
+       
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-        <button type="submit" class="btn btn-primary"   asp-action="Update">Update</button>
+        <button type="submit" class="btn btn-primary"  asp-action="Create" >Add</button>
         
       </div>
-        </form>
+     
     </div>
+    </form>
   </div>
 </div>
-
 </div>
-
 
 

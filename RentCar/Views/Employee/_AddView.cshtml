@@ -4,40 +4,27 @@
 }
 
 <!-- Modal -->
-<div class="modal fade" id="UpdatestaticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+<div class="modal fade" id="AddstaticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="staticBackdropLabel">Update Client</h5>
+        <h5 class="modal-title" id="staticBackdropLabel">Add Employee</h5>
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
-     <form>
       <div class="modal-body">
-           
-     <Label>Update client</Label>
-          
-   <select class="form-control" asp-for="id" >
-      
-   @foreach ( var client in @Model.clients)
-       {
-          
-       <option value="@client.id"> @client.name</option>
-       } 
-      
-   </select>
-   
- 
+     <Label>Add Employee</Label>
+        <form >
   <div class="form-group">
     <label for="exampleFormControlInput1">Name: </label>
     <input type="text" class="form-control" asp-for="@Model.name">
        <label for="exampleFormControlInput1">Idenfication card : </label>
     <input type="text" class="form-control" asp-for="@Model.identificationCard">
-     <label for="exampleFormControlInput1">Tarjeta CR number: </label>
-    <input type="text" class="form-control" asp-for="@Model.tarjetaCrNumber">
+     <label for="exampleFormControlInput1">Working time: </label>
+    <input type="text" class="form-control" asp-for="@Model.workingTime">
        <label for="exampleFormControlInput1">Credit Limit : </label>
-    <input type="text" class="form-control" asp-for="@Model.creditLimit">
-    <label for="exampleFormControlInput1">Person Kind : </label>
-    <input type="text" class="form-control" asp-for="@Model.PersonKind">
+    <input type="text" class="form-control" asp-for="@Model.CommissionPercentage">
+    <label for="exampleFormControlInput1">Date of Admission : </label>
+    <input type="text" class="form-control" asp-for="@Model.datedateOfAdmission">
   </div>
   <div class="form-group">
     <label hidden="hidden" asp-for= "id"></label>
@@ -47,18 +34,15 @@
   <option value= "False">Out of Stock</option>
 </select>
       </div>
-   
-  
-      </div>
-     
+      
+       
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-        <button type="submit" class="btn btn-primary"  asp-action="Update">Update</button>
-        </form>
+        <button type="submit" class="btn btn-primary"  asp-action="Create" >Add</button>
+        
       </div>
-       
+      </form>
     </div>
   </div>
 </div>
-
 </div>

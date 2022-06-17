@@ -12,6 +12,7 @@ namespace RentCar.Models
         public int motorNumber { get; set; }
 
         public int plateNumber { get; set; }
+        
 
         public Vehicule_Type vehicule_Type { get; set; }
 

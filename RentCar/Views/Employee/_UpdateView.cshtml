@@ -8,20 +8,20 @@
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="staticBackdropLabel">Update Client</h5>
+        <h5 class="modal-title" id="staticBackdropLabel">Update Employee</h5>
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
      <form>
       <div class="modal-body">
            
-     <Label>Update client</Label>
+     <Label>Update Employee</Label>
           
    <select class="form-control" asp-for="id" >
       
-   @foreach ( var client in @Model.clients)
+   @foreach ( var item in @Model.employees)
        {
           
-       <option value="@client.id"> @client.name</option>
+       <option value="@item.id"> @item.Name</option>
        } 
       
    </select>
@@ -33,11 +33,11 @@
        <label for="exampleFormControlInput1">Idenfication card : </label>
     <input type="text" class="form-control" asp-for="@Model.identificationCard">
      <label for="exampleFormControlInput1">Tarjeta CR number: </label>
-    <input type="text" class="form-control" asp-for="@Model.tarjetaCrNumber">
+    <input type="text" class="form-control" asp-for="@Model.workingTime">
        <label for="exampleFormControlInput1">Credit Limit : </label>
-    <input type="text" class="form-control" asp-for="@Model.creditLimit">
-    <label for="exampleFormControlInput1">Person Kind : </label>
-    <input type="text" class="form-control" asp-for="@Model.PersonKind">
+    <input type="text" class="form-control" asp-for="@Model.CommissionPercentage">
+    <label for="exampleFormControlInput1"> Admission date : </label>
+    <input type="text" class="form-control" asp-for="@Model.datedateOfAdmission">
   </div>
   <div class="form-group">
     <label hidden="hidden" asp-for= "id"></label>
